@@ -1,0 +1,85 @@
+//.footer-links {
+//  display: flex;
+//  align-items: center;
+//}
+//.footer-links a {
+//  color: black;
+//  opacity: 0.15;
+//  text-decoration: none;
+//  font-size: 24px;
+//  padding: 0px 10px;
+//}
+//.footer-links a:hover {
+//  opacity: 1;
+//}
+//.footer .fa-heart {
+//  color: #D23333;
+//}
+
+.footer{
+  background: #701019;
+  position: absolute;
+  bottom: 0;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: white;
+}
+
+
+.footer-section {
+  height: 150px;
+  width: 100%;
+}
+
+.footer-imprint {
+  position: absolute;
+  bottom: 0;
+}
+
+.footer p {
+  color: #B7989B;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+
+.footer-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30%
+}
+
+.footer-header{
+  font-weight: bolder;
+  color: #F2E9EA;
+  margin-top: 20px;
+}
+
+.footer-header p{
+  color: #F2E9EA;
+}
+
+.footer-links a:hover{
+  opacity: 0.5;
+  text-decoration: none;
+}
+.footer-icons{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 12.5px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-icons i {
+  padding-left: 60px;
+  color: #B7989B;
+}
+
+.footer-icons i:hover {
+  opacity: 0.5;
+}
