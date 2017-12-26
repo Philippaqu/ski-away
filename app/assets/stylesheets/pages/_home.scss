@@ -1,2 +1,20 @@
 // Specific CSS for your home-page
+.section-heading {
+  color: #B7989B;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.section-sub-header{
+  color: #B7989B;
+}
+
+.card-wrapper{
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+}
 
