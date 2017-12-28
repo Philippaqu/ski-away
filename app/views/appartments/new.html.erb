@@ -1,1 +1,20 @@
-<h2>New view</h2>
+<div class="bg" style="background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url('/assets/winter_wonderland.jpeg' );">
+  <div class="container" >
+  <section id="new-appartment">
+    <h1>New appartment</h1>
+  </section>
+  <section>
+    <div class="form-description">
+      <%= simple_form_for [@appartment] do |f| %>
+      <%= f.input :address, placeholder: "e.g. Unterer Mooserweg 2, 6580 Sankt Anton am Arlberg" %>
+      <%= f.input :description, placeholder: "min. 200 characters"%>
+      <%= f.input :price, placeholder: " in EUR and per night" %>
+
+      <%= f.submit "Create new appartment", class: "btn btn-primary btn-lg" %>
+      <% end %>
+
+    </div>
+  </section>
+</div>
+</div>
+
