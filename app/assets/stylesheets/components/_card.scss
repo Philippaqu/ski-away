@@ -1,7 +1,7 @@
 .card{
-  height: 400px;
-  width: 450px;
-  margin: 100px;
+  height: 350px;
+  width: 400px;
+  margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,8 +12,8 @@
 }
 
 .card-image{
-  height: 200px;
-  width: 430px;
+  height: 190px;
+  width: 380px;
   margin-top: 10px;
   border-radius: 4px;
   background-size: 100%
@@ -21,8 +21,8 @@
 
 .card-content{
   margin-bottom: 10px;
-  width: 430px;
-  height: 170px;
+  width: 380px;
+  height: 130px;
   padding: 10px;
   display: flex;
   flex-direction: column;
