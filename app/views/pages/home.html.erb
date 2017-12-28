@@ -1,39 +1,60 @@
 
-  <%= render 'shared/banner' %>
-  <!-- Discover -->
-  <section id="discover">
-    <div class="container">
-      <div class="row"></div>
-      <div class="col-m-4">
-        <h2 class="section-heading">Discover</h2>
-        <h4 class="section-sub-header">Sub header</h4>
-        <div class="card-wrapper"></div>
+<%= render 'shared/banner' %>
+<!-- Discover -->
+<section id="discover">
+  <div class="container">
+    <div class="col-m-4">
+      <h2 class="section-heading">Testimonials</h2>
+      <h4 class="section-sub-header">Sub header</h4>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <% @appartments = Appartment.all %>
+    <% @appartments.sample(3).each do |appartment| %>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-image" style="background-image: url('/assets/winter_shack.jpeg')""></div>
+        <div class="card-content">
+          <div class="appartment-type-header"><%= appartment.appartment_type %></div>
+          <div class="description-header"><%= link_to appartment.header, appartment_path(appartment)%></div>
+          <div class="price-header">From <%= appartment.price %> € per night</div>
+          <div class="card-icons">
+            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    <% end %>
+  </div>
+</section>
 
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <div class="container">
-      <div class="row"></div>
-      <div class="col-m-4">
-        <h2 class="section-heading">Testimonials</h2>
-        <h4 class="section-sub-header">Sub header</h4>
-        <div class="card-wrapper"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- How it works -->
-  <section id="skiaway">
-    <div class="container">
-      <div class="row"></div>
-      <div class="col-m-4">
-        <h2 class="section-heading">How it works</h2>
-        <h4 class="section-sub-header">Sub header</h4>
-        <div class="card-wrapper"></div>
-      </div>
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="container">
+    <div class="row"></div>
+    <div class="col-m-4">
+      <h2 class="section-heading">Discover</h2>
+      <h4 class="section-sub-header">Sub header</h4>
+      <div class="card-wrapper"></div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- How it works -->
+<section id="skiaway">
+  <div class="container">
+    <div class="row"></div>
+    <div class="col-m-4">
+      <h2 class="section-heading">How it works</h2>
+      <h4 class="section-sub-header">Sub header</h4>
+      <div class="card-wrapper"></div>
+    </div>
+  </div>
+</section>
 
 
