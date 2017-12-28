@@ -7,7 +7,6 @@ gem 'rails', '~>5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'jbuilder', '~> 2.5'
-gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'redis'
 
@@ -21,6 +20,14 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 
+# Devise
+gem 'devise'
+
+# Cloudinary
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'
 
 
 

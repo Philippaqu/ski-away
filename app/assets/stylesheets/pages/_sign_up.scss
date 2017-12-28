@@ -12,10 +12,10 @@
 #sign-up-button {
   background-color: #701019;
   color: #B7989B;
-  margin: 1px solid #701019;
+  border: 1px solid #701019;
 }
 
- a {
+ .shared-links a {
   color: #701019;
   padding-bottom: 100px;
 }
@@ -24,6 +24,22 @@
   color: #B7989B;
   font-weight: bold;
   text-decoration: none;
+}
+
+.devise-button {
+  background-color: #701019;
+  color: #B7989B;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 39px;
+}
+
+.devise-button a{
+  color: #B7989B;
+}
+
+#devise-back-link{
+  padding-left: 50px;
 }
 }
 
