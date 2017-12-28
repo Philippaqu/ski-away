@@ -1,0 +1,51 @@
+.card{
+  height: 400px;
+  width: 450px;
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2px 2px 3px gray;
+  border-radius: 4px;
+}
+
+.card-image{
+  height: 200px;
+  width: 430px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-size: 100%
+}
+
+.card-content{
+  margin-bottom: 10px;
+  width: 430px;
+  height: 170px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.appartment-type-header{
+  color: #701019;
+}
+
+.description-header{
+  color: #B7989B;
+  font-weight: bolder;
+}
+
+.price-header{
+  color: #B7989B;
+}
+
+.card-icons{
+  color: #701019;
+}
+
+
+
