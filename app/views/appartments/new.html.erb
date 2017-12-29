@@ -8,6 +8,7 @@
       <%= simple_form_for [@appartment] do |f| %>
       <%= f.input :address, placeholder: "e.g. Unterer Mooserweg 2, 6580 Sankt Anton am Arlberg" %>
       <%= f.input :header, placeholder: "e.g. Cosy appartment in Swiss Alps" %>
+      <%= f.input :photo, as: :attachinary %>
       <%= f.input :appartment_type, collection: ["Entire house", "Entire appartment", "Room"] %>
       <%= f.input :description, placeholder: "min. 200 characters"%>
       <%= f.input :price, placeholder: " in EUR and per night" %>
