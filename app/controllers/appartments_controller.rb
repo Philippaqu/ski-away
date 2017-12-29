@@ -6,6 +6,7 @@ class AppartmentsController < ApplicationController
 
   def new
     @appartment = Appartment.new
+    redirect_to appartments_id_path
   end
 
   def create
@@ -32,6 +33,6 @@ class AppartmentsController < ApplicationController
   private
 
   def appartment_params
-    params.require(:appartment).permit(:address, :description, :header, :appartment_type, :price, :photo)
+    params.require(:appartment).permit(:address, :description, :header, :appartment_type, :price, :photo, pictures: [])
   end
 end

@@ -1,12 +1,11 @@
  <!--Main picture-->
  <div class="container">
    <section class="section-wrapper">
-
     <div class="picture" id="picture-wrapper">
       <% if @appartment.photo.nil? %>
       <%= image_tag '/assets/winter_shack.jpeg' %>
       <% else %>
-      <%= @appartment.photo %>
+      <%= cl_image_tag @appartment.photo.path, class: "picture" %>
       <% end %>
     </div>
   </section>
@@ -15,8 +14,14 @@
   <section class="section-wrapper">
     <div class="section-sub-header">See more</div>
     <div class="small-pictures-wrapper">
-      <% 12.times do %>
+      <% if @appartment.pictures.empty? %>
+      <% 10.times do %>
       <%=  image_tag '/assets/winter_shack.jpeg', class: "small-picture" %>
+      <% end %>
+      <% else %>
+      <% @appartment.pictures.each do |picture| %>
+      <%= cl_image_tag picture.path, class: "small-picture" %>
+      <% end %>
       <% end %>
     </div>
   </section>
