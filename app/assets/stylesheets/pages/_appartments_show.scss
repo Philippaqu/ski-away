@@ -1,0 +1,66 @@
+.picture {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  vertical-align: center;
+}
+
+.small-picture {
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+  background-position: center;
+}
+
+.small-pictures-wrapper{
+  margin-bottom: 50px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#picture-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-borders {
+  width: 100%;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+}
+
+.description-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  color: #B7989B;
+}
+
+.bed-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description-icons .fa {
+  padding: 10px;
+}
+
+.map {
+  height: 400px;
+  width: 400px;
+  border: 1px solid white;
+}
+
+#address-section{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}

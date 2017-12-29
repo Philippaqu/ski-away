@@ -4,7 +4,4 @@ class PagesController < ApplicationController
   def home
   end
 
-  def index
-    @appartments = Appartment.all
-  end
 end
