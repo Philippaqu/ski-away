@@ -23,6 +23,8 @@ gem 'uglifier'
 # Devise
 gem 'devise'
 
+gem 'figaro'
+
 # Cloudinary
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
