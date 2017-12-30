@@ -10,3 +10,11 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 CLOUDINARY_URL: 'cloudinary://427643367548499:14M74CNbKETCBu8Ypey7fXTmfv8@dxijovc6p'
+
+development:
+  FB_ID: "136445593697916"
+  FB_SECRET: "5ef2da4b17d7042313b9941e24d7b597"
+
+production:
+  FB_ID: "1646297508751915"
+  FB_SECRET: "5ef918d210e30b9d5218c6aea02cd8b2"

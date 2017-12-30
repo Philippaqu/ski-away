@@ -31,6 +31,8 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 
+# Facebook Connect
+gem 'omniauth-facebook'
 
 
 group :development, :test do

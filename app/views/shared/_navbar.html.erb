@@ -16,7 +16,7 @@
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <% avatar_url = (current_user.avatar? ? cl_image_path( current_user.avatar.path, :crop => "fill") : "https://kitt.lewagon.com/placeholder/users/ssaunier") %>
+        <% avatar_url = current_user.facebook_picture_url || (current_user.avatar? ? cl_image_path( current_user.avatar.path, :crop => "fill") : "https://kitt.lewagon.com/placeholder/users/ssaunier") %>
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">
         <%= image_tag avatar_url, class: "avatar driodiwb.toggle", id: "navbar-wagon-menu" %></a>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
