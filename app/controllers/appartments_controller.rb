@@ -6,7 +6,6 @@ class AppartmentsController < ApplicationController
 
   def new
     @appartment = Appartment.new
-    redirect_to appartments_id_path
   end
 
   def create
