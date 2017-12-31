@@ -1,0 +1,18 @@
+<div class="bg" style="background-image: linear-gradient(rgba(200,200,200,0.6),rgba(255,255,255,0.9 )), url('/assets/ski_lift.jpeg' );">
+  <div class="container" >
+  <section id="new-appartment">
+    <h1>Add a review</h1>
+  </section>
+  <section>
+    <div class="form-description">
+      <%= simple_form_for [@appartment, @review] do |f| %>
+      <%= f.input :testimonial%>
+      <%= f.input :rating, collection: [1, 2, 3, 4, 5] %>
+      <%= f.submit "Create review", class: "btn btn-primary btn-lg" %>
+      <% end %>
+
+    </div>
+  </section>
+</div>
+</div>
+

@@ -1,0 +1,12 @@
+.large-review-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.large-review-card {
+  border: 1px solid red;
+  width: 98%;
+  margin: 10px;
+}
