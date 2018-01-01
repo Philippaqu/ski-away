@@ -1,12 +1,44 @@
 .large-review-card-container {
+
+}
+
+.large-review-card {
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px gray;
+  border: 1px solid none;
+  width: 98%;
+  margin: 10px;
+  padding: 20px;
+  color: #B7989B;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
-.large-review-card {
+.card-head{
   border: 1px solid red;
-  width: 98%;
-  margin: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#lg-rating{
+
+}
+
+.lg-avatar{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.review-user{
+  color: #B7989B;
+
+}
+
+.card-body{
+  border: 1px solid red;
+
 }
