@@ -51,8 +51,8 @@
           <p> <%= review.user.first_name %> <%= review.user.last_name %></p>
         </div>
       </div>
-      <div class="card-body center-items">
-        <p>" <%= review.testimonial%> "</p>
+      <div class="card-body center-items" id="testimonial-link">
+        <p>" <%= link_to review.testimonial, appartment_path(review.appartment_id)%> "</p>
       </div>
     </div>
     <% end %>

@@ -22,6 +22,7 @@ gem 'uglifier'
 
 # Devise
 gem 'devise'
+gem 'geocoder'
 
 gem 'figaro'
 

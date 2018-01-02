@@ -20,7 +20,7 @@
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">
         <%= image_tag avatar_url, class: "avatar driodiwb.toggle", id: "navbar-wagon-menu" %></a>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
+          <li><%= link_to "Profile",  edit_user_registration_path  %></li>
           <li><a href="#">Dashboard</a></li>
           <li><%= link_to t(".sign_out", default: "Logout"), destroy_user_session_path, method: :delete%></li>
         </ul>

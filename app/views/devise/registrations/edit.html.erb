@@ -9,6 +9,7 @@
   <div class="form-inputs sign-up-form">
     <%= f.input :first_name, required: true, autofocus: true, placeholder: current_user.first_name %>
     <%= f.input :last_name, required: true, autofocus: true %>
+    <%= f.input :avatar, as: :attachinary %>
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -24,20 +25,22 @@
     <%= f.button :submit, "Update", class: "btn-primary" %>
   </div>
 <% end %>
-</div>
-</section>
-
-<section>
-  <div class="container" id="devise-session">
-<h2 class="section-header">Cancel my account</h2>
-
-<p class="sign-up-form">Unhappy?</p>
-<div class="btn btn-primary">
- <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete%>
-</div>
+<br>
 <div class="btn btn-primary">
 <%=link_to "Back", :back%>
 </div>
 </div>
+</section>
+
+<section >
+  <div class="container" id="devise-session">
+<br>
+<p class="sign-up-form">Unhappy?</p>
+<div class="btn btn-primary">
+ <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete%>
+</div>
+
+</div>
+<br>
 </section>
 
