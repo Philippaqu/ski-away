@@ -10,20 +10,16 @@
   <div class="card-wrapper">
     <% @appartments = Appartment.all %>
     <% @appartments.sample(3).each do |appartment| %>
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-image" style="background-image: url('<%= cl_image_path(appartment.photo.path) %>')"></div>
-        <div class="card-content">
-          <div class="appartment-type-header"><%= appartment.appartment_type %></div>
-          <div class="description-header"><%= link_to appartment.header, appartment_path(appartment)%></div>
-          <div class="price-header">From <%= appartment.price %> € per night</div>
-          <div class="card-icons">
-            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
-            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
-            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
-            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
-            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
-          </div>
+    <div class="card">
+      <div class="card-image" style="background-image: url('<%= cl_image_path(appartment.photo.path) %>')"></div>
+      <div class="card-content">
+        <div class="appartment-type-header"><%= appartment.appartment_type %></div>
+        <div class="description-header"><%= link_to appartment.header, appartment_path(appartment)%></div>
+        <div class="price-header">From <%= appartment.price %> € per night</div>
+        <div class="card-icons">
+          <% appartment.reviews.average(:rating).to_i.times do %>
+          <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     </div>
@@ -35,13 +31,34 @@
 <!-- Testimonials -->
 <section id="testimonials">
   <div class="container">
-    <div class="row"></div>
     <div class="col-m-4">
       <h2 class="section-heading">Testimonials</h2>
       <h4 class="section-sub-header">Sub header</h4>
-      <div class="card-wrapper"></div>
     </div>
   </div>
+  <div class="card-wrapper">
+    <% @reviews = Review.all %>
+    <% @reviews.sample(3).each do |review| %>
+    <div class="card">
+      <div class="card-head sm-review-card-head">
+        <div id="lg-rating">
+          <% review.rating.times do %>
+          <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+          <% end %>
+        </div>
+        <div class="review-user center-items"><% avatar_url = review.user.facebook_picture_url || (review.user.avatar? ? cl_image_path( review.user.avatar.path, :crop => "fill") : "https://kitt.lewagon.com/placeholder/users/ssaunier") %>
+          <%= image_tag avatar_url, class: "sm-avatar"%>
+          <p> <%= review.user.first_name %> <%= review.user.last_name %></p>
+        </div>
+      </div>
+      <div class="card-body center-items">
+        <p>" <%= review.testimonial%> "</p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>
 </section>
 
 <!-- How it works -->

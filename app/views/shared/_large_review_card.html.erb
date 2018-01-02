@@ -6,14 +6,13 @@
         <% r.rating.times do %>
         <i class="fa fa-snowflake-o" aria-hidden="true"></i>
         <% end %>
-
       </div>
-      <div class="review-user"><% avatar_url = r.user.facebook_picture_url || (r.user.avatar? ? cl_image_path( r.user.avatar.path, :crop => "fill") : "https://kitt.lewagon.com/placeholder/users/ssaunier") %>
+      <div class="review-user center-items"><% avatar_url = r.user.facebook_picture_url || (r.user.avatar? ? cl_image_path( r.user.avatar.path, :crop => "fill") : "https://kitt.lewagon.com/placeholder/users/ssaunier") %>
         <%= image_tag avatar_url, class: "lg-avatar"%>
         <p> <%= r.user.first_name %> <%= r.user.last_name %></p>
       </div>
     </div>
-    <div class="card-body"><p><%= r.testimonial %></p></div>
+    <div class="card-body"><p>"<%= r.testimonial %>"</p></div>
   </div>
   <% end %>
 </div>

@@ -29,28 +29,31 @@
   <!--Short header-->
   <section class="section-wrapper">
     <h2 class="section-heading">
-      <%= @appartment.header %></h2>
-    </section>
+      <%= @appartment.header %> <%@appartment.reviews.average(:rating).to_i.times do %>
+      <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+      <% end %>
+    </h2>
+  </section>
 
-    <!--Description-->
-    <section class="section-wrapper">
-      <h4 class="section-sub-header">Description</h4>
-      <div class="section-borders">
-        <p><%= @appartment.description %></p>
-      </div>
-    </section>
+  <!--Description-->
+  <section class="section-wrapper">
+    <h4 class="section-sub-header">Description</h4>
+    <div class="section-borders">
+      <p><%= @appartment.description %></p>
+    </div>
+  </section>
 
 
-    <!--Details-->
-    <section class="section-wrapper">
-      <h4 class="section-sub-header">Details</h4>
-      <div class="section-borders">
-        <div class="description-icons">
+  <!--Details-->
+  <section class="section-wrapper">
+    <h4 class="section-sub-header">Details</h4>
+    <div class="section-borders">
+      <div class="description-icons">
         <p>Type : <%= @appartment.appartment_type %></p>
         <div class="bed-icon">
-        <% 6.times do %>
-        <i class="fa fa-bed" aria-hidden="true"></i>
-        <% end %>
+          <% 6.times do %>
+          <i class="fa fa-bed" aria-hidden="true"></i>
+          <% end %>
         </div>
         <i class="fa fa-wifi" aria-hidden="true"> : Yes</i>
         <i class="fa fa-bath" aria-hidden="true"> : Yes</i>
@@ -62,8 +65,8 @@
       <h4 class="section-sub-header">Address</h4>
       <div class="section-borders">
         <div id="address-section">
-        <p><%= @appartment.address %></p>
-        <div class="map"></div>
+          <p><%= @appartment.address %></p>
+          <div class="map"></div>
         </div>
       </div>
     </section>
@@ -73,6 +76,7 @@
       <h4 class="section-sub-header">Reviews</h4>
       <div class="section-borders">
         <%= render 'shared/large_review_card' %>
+        <%= link_to "Add review", new_appartment_review_path(@appartment), class: "btn btn-primary" %>
       </div>
     </section>
   </div>

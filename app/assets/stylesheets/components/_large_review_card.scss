@@ -17,14 +17,9 @@
 }
 
 .card-head{
-  border: 1px solid red;
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-
-#lg-rating{
-
 }
 
 .lg-avatar{
@@ -39,6 +34,17 @@
 }
 
 .card-body{
-  border: 1px solid red;
+  width: 60%;
+  margin-bottom: 87.5px;
+}
 
+.sm-avatar{
+  height: 4 0px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.sm-review-card-head{
+  font-size: 15px;
+  padding: 20px;
 }

@@ -7,14 +7,14 @@ class ReviewsController < ApplicationController
   def new
     find
     @review = Review.new
-    @review.user_id = @user
+    @review.user_id = @user.id
     @review.appartment_id = @appartment.id
   end
 
   def create
     find
     @review = Review.create(review_params)
-    @review.user_id = @user
+    @review.user_id = @user.id
     @review.appartment_id = @appartment.id
     @review.save
     redirect_to appartment_path(@appartment)
