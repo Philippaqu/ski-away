@@ -6,8 +6,9 @@
   <section>
     <div class="form-description">
       <%= simple_form_for [@appartment, @review] do |f| %>
-      <%= f.input :testimonial%>
       <%= f.input :rating, collection: [1, 2, 3, 4, 5] %>
+
+      <%= f.input :testimonial, as: :text, input_html: {cols: 5, rows: 5} %>
       <%= f.submit "Create review", class: "btn btn-primary btn-lg" %>
       <% end %>
 

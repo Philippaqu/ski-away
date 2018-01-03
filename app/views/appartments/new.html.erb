@@ -16,9 +16,8 @@
       <%= f.input :header, placeholder: "e.g. Cosy appartment in Swiss Alps" %>
 
       <%= f.input :appartment_type, collection: ["Entire house", "Entire appartment", "Room"] %>
-      <%= f.input :description, placeholder: "min. 200 characters"%>
+      <%= f.input :description, as: :text, placeholder: "min. 200 characters", input_html: {cols: 5, rows: 7} %>
       <%= f.input :price, placeholder: " in EUR and per night" %>
-
       <%= f.submit "Create new appartment", class: "btn btn-primary btn-lg" %>
       <% end %>
 
