@@ -82,5 +82,16 @@
     </section>
   </div>
 
+  <!--Booking-->
+ <div class="booking-link flex-space-between">
+  <div class="price-info">
+    <h5><%= @appartment.price %>€ per night</h5>
+  </div>
+  <div class="booking-button">
+  <%= link_to "Book", new_appartment_booking_path(@appartment), class: "btn btn-primary" %>
+  </div>
+</div>
+
+
 
 

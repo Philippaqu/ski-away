@@ -68,3 +68,14 @@
   align-items: flex-start;
   justify-content: space-around;
 }
+
+.booking-link {
+  padding: 50px;
+  position: sticky;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 2px -2px 3px gray;
+
+}

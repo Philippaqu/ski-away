@@ -1,8 +1,7 @@
-require 'date'
-
 class BookingsController < ApplicationController
 
   def new
+    find
     @booking = Booking.new
   end
 
@@ -21,7 +20,7 @@ class BookingsController < ApplicationController
 
   def find
     @user = current_user
-    @appartment = appartment.find(params[:id])
+    @appartment = Appartment.find(params[:appartment_id])
   end
 
 end
