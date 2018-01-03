@@ -2,13 +2,13 @@ class AppartmentsController < ApplicationController
 
   def index
     @appartments = Appartment.all
-   # @appartments = appartment.where.not(latitude: nil, longitude: nil)
-#
-   # @markers = Gmaps4rails.build_markers(@appartments) do |appartment, marker|
-   #   marker.lat appartment.latitude
-   #   marker.lng appartment.longitude
-      # marker.infowindow render_to_string(partial: "/appartments/map_box", locals: { appartment: appartment })
-   # end
+    #@appartments_address = Appartment.where.not(latitude: nil, longitude: nil)
+
+    #@markers = Gmaps4rails.build_markers(@appartments_address) do |appartment, marker|
+    #  marker.lat appartment.latitude
+    #  marker.lng appartment.longitude
+    #   marker.infowindow render_to_string(partial: "/appartments/map_box", locals: { appartment: appartment })
+    #end
   end
 
   def new

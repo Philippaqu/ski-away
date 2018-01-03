@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102180731) do
+ActiveRecord::Schema.define(version: 20180103100625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 20180102180731) do
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.bigint "appartment_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appartment_id"], name: "index_bookings_on_appartment_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -85,6 +96,8 @@ ActiveRecord::Schema.define(version: 20180102180731) do
   end
 
   add_foreign_key "appartments", "users"
+  add_foreign_key "bookings", "appartments"
+  add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "appartments"
   add_foreign_key "reviews", "users"
 end

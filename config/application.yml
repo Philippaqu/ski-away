@@ -18,3 +18,5 @@ development:
 production:
   FB_ID: "1646297508751915"
   FB_SECRET: "5ef918d210e30b9d5218c6aea02cd8b2"
+
+  GOOGLE_API_BROWSER_KEY: "AIzaSyAp7D4dWGeDzDG-J7bSLzTnGwHRuHcuje0"
