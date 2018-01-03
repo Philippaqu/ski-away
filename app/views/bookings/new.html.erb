@@ -1,0 +1,14 @@
+<div class="container">
+  <section>
+    <div class="section-wrapper">
+      <div class="form-description">
+        <%= simple_form_for [@appartment, @booking] do |f|%>
+        <%= f.input :start_date, input_html: {class: "datepicker"}, placeholder: "Arrival", as: :string %>
+        <%= f.input :end_date, input_html: {class: "datepicker"}, placeholder: "Departure", as: :string %>
+        <%= f.submit "Book", class: "btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
+

@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @booking.user_id = @user.id
     @booking.appartment_id = @appartment.id
     @booking.save
+    redirect_to appartments_path(@appartment)
   end
 
   private
