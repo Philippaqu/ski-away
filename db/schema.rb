@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103133506) do
+ActiveRecord::Schema.define(version: 20180103143724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,8 +57,18 @@ ActiveRecord::Schema.define(version: 20180103133506) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "text_message"
+    t.string "status", default: "pending"
     t.index ["appartment_id"], name: "index_bookings_on_appartment_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "appartment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appartment_id"], name: "index_conversations_on_appartment_id"
+    t.index ["user_id"], name: "index_conversations_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -99,6 +109,7 @@ ActiveRecord::Schema.define(version: 20180103133506) do
   add_foreign_key "appartments", "users"
   add_foreign_key "bookings", "appartments"
   add_foreign_key "bookings", "users"
+  add_foreign_key "conversations", "users"
   add_foreign_key "reviews", "appartments"
   add_foreign_key "reviews", "users"
 end

@@ -63,6 +63,13 @@ body, html{
   align-items: center;
 }
 
+.column-flex-start{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .center-items{
   display: flex;
   flex-direction: column;
@@ -74,3 +81,19 @@ body, html{
   color: #701019;
 }
 
+// Status
+.pending{
+  color: gray;
+  font-weight: bold;
+  opacity: 0.4;
+}
+
+.accepted{
+  color: green;
+  font-weight: bold;
+}
+
+.declined{
+  color: red;
+  font-weight: bold;
+}

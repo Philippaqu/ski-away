@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
 
+  def index
+    @user = current_user
+    @bookings = Booking.all.where(user_id: @user.id)
+  end
+
   def new
     find
     @booking = Booking.new

@@ -1,0 +1,35 @@
+<div class="container">
+  <section>
+    <div class="section-wrapper">
+      <div class="section-heading">
+        <h2>Bookings</h2>
+        <div class="section-sub-header">
+          <h4>See all your Bookings</h4>
+        </div>
+      </div>
+      <div class="large-review-card-container">
+        <% @bookings.each do |b| %>
+        <div class="large-review-card">
+          <div class="card-head">
+            <p><%= (b.start_date).strftime("%m/%d/%Y")  %> - <%=(b.end_date).strftime("%m/%d/%Y") %></p>
+            <% if b.status == 'accepted' %>
+            <div class="accepted"><%= b.status %></div>
+            <% elsif b.status == 'declined' %>
+            <div class="declined"><%= b.status %></div>
+            <% else %>
+            <div class="pending"><%= b.status %></div>
+            <% end %>
+          </div>
+          <div class="booking-card-content">
+            <div class="column-flex-start">
+              <%= cl_image_tag b.appartment.photo.path, height: 80, width: 80, crop: :fill  %>
+              <p> <strong>Address:</strong> <%= b.appartment.address %></p>
+              <p><strong>Total Price:</strong> <%= b.total_price %>€</p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
