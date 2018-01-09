@@ -16,12 +16,18 @@ class BookingsController < ApplicationController
     @booking.user_id = @user.id
     @booking.appartment_id = @appartment.id
     @booking.save
+    #@confirmation = Confirmation.create(params[:text])
+    #@confirmation.booking_id = @booking.id
+    #@confirmation.text = @booking.text_message
+    #@confirmation.conversation_id = Conversation.find(params[:conversation_id])
+    #@confirmation.save
     redirect_to appartments_path(@appartment)
+
   end
 
   private
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:text_message)
   end
 
   def find

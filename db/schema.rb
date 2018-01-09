@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103143724) do
+ActiveRecord::Schema.define(version: 20180103230816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(version: 20180103143724) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "confirmations", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.bigint "conversation_id"
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_confirmations_on_booking_id"
+    t.index ["conversation_id"], name: "index_confirmations_on_conversation_id"
+  end
+
   create_table "conversations", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "appartment_id"
@@ -69,6 +79,16 @@ ActiveRecord::Schema.define(version: 20180103143724) do
     t.datetime "updated_at", null: false
     t.index ["appartment_id"], name: "index_conversations_on_appartment_id"
     t.index ["user_id"], name: "index_conversations_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "text"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -109,7 +129,11 @@ ActiveRecord::Schema.define(version: 20180103143724) do
   add_foreign_key "appartments", "users"
   add_foreign_key "bookings", "appartments"
   add_foreign_key "bookings", "users"
+  add_foreign_key "confirmations", "bookings"
+  add_foreign_key "confirmations", "conversations"
   add_foreign_key "conversations", "users"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "appartments"
   add_foreign_key "reviews", "users"
 end

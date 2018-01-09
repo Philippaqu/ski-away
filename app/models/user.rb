@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_attachment :avatar
   has_many :reviews
   has_many :bookings
+  has_many :users
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
