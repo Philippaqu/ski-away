@@ -7,13 +7,25 @@
           <h4>Manage your requests</h4>
         </div>
       </div>
+
       <div class="large-review-card-container">
         <% @confirmations.each do |c| %>
         <% if c.booking.appartment.user_id == current_user.id %>
+
+
+      <!-- Before Confirmation -->
+
+        <% if c.booking.status == 'pending' %>
         <div class="large-review-card">
           <div class="card-head">
-
             <h5><strong>Booking request</strong></h5>
+            <% if c.booking.status == 'accepted' %>
+            <div class="accepted"><%= c.booking.status %></div>
+            <% elsif c.booking.status == 'declined' %>
+            <div class="declined"><%= c.booking.status %></div>
+            <% else %>
+            <div class="pending"><%= c.booking.status %></div>
+            <% end %>
           </div>
           <div class="booking-card-content">
             <div class="column-flex-start">
@@ -32,9 +44,36 @@
             </div>
           </div>
         </div>
-        <% end %>
-        <% end %>
+        <% else %>
+
+
+        <!-- After Confirmation -->
+
+        <div class="large-review-card" >
+          <div class="card-head" style="opacity: 0.5">
+            <h5><strong>Booking request</strong></h5>
+            <% if c.booking.status == 'accepted' %>
+            <div class="accepted"><%= c.booking.status %></div>
+            <% elsif c.booking.status == 'declined' %>
+            <div class="declined"><%= c.booking.status %></div>
+            <% else %>
+            <div class="pending"><%= c.booking.status %></div>
+            <% end %>
+          </div>
+          <div class="booking-card-content" style="opacity: 0.5">
+            <div class="column-flex-start">
+              <%= cl_image_tag c.booking.appartment.photo.path, height: 80, width: 80, crop: :fill %>
+              <p><strong>From: </strong><%= (c.booking.start_date).strftime("%m/%d/%Y")  %> <strong> To: </strong> <%= (c.booking.end_date).strftime("%m/%d/%Y") %></p>
+              <p><strong>Message: </strong><%= c.text %></p>
+              <p><strong>Total Price:</strong> <%= c.booking.total_price %>€</p>
+            </div>
+          </div>
+        </div>
       </div>
+      <% end %>
+      <% end %>
     </div>
-  </section>
+    <% end %>
+  </div>
+</section>
 </div>
