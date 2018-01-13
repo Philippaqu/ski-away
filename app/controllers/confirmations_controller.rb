@@ -1,13 +1,11 @@
 class ConfirmationsController < ApplicationController
 
- # def index
- #   @user = current_user
- #   @confirmations = Confirmation.where(@user.id = @appartment.user_id)
- # end
+  def index
+    @confirmations = Confirmation.all
+  end
 
   def create
     @booking = Booking.find(params[:booking_id])
-    @conversation = Conversation.find(params[:conversation_id])
     @confirmation = Confirmation.create(confirmation_params)
     @confirmation.booking_id = @booking.id
     @confirmation.conversation_id = @conversation.id

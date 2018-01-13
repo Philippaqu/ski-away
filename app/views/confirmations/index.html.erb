@@ -1,0 +1,40 @@
+<div class="container">
+  <section>
+    <div class="section-wrapper">
+      <div class="section-heading">
+        <h2>Messages</h2>
+        <div class="section-sub-header">
+          <h4>Manage your requests</h4>
+        </div>
+      </div>
+      <div class="large-review-card-container">
+        <% @confirmations.each do |c| %>
+        <% if c.booking.appartment.user_id == current_user.id %>
+        <div class="large-review-card">
+          <div class="card-head">
+
+            <h5><strong>Booking request</strong></h5>
+          </div>
+          <div class="booking-card-content">
+            <div class="column-flex-start">
+              <%= cl_image_tag c.booking.appartment.photo.path, height: 80, width: 80, crop: :fill %>
+              <p><strong>From: </strong><%= (c.booking.start_date).strftime("%m/%d/%Y")  %> <strong> To: </strong> <%= (c.booking.end_date).strftime("%m/%d/%Y") %></p>
+              <p><strong>Message: </strong><%= c.text %></p>
+              <p><strong>Total Price:</strong> <%= c.booking.total_price %>€</p>
+            </div>
+            <div class="flex-start">
+              <div class="btn btn-primary">
+                Accept
+              </div>
+              <div class="btn btn-primary">
+                Decline
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>

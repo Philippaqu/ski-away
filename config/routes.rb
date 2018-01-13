@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get 'pages/home'
 
+  resources :confirmations, only:[:index]
+
   resources :appartments do
     resources :reviews, only: [:new, :create]
     resources :bookings, only: [:new, :create]

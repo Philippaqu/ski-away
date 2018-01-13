@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    @bookings = Booking.all.where(user_id: @user.id)
+    @bookings = Booking.all
   end
 
   def new

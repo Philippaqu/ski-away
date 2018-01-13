@@ -9,6 +9,7 @@
       </div>
       <div class="large-review-card-container">
         <% @bookings.each do |b| %>
+        <% if b.user_id == current_user.id %>
         <div class="large-review-card">
           <div class="card-head">
             <p><%= (b.start_date).strftime("%m/%d/%Y")  %> - <%=(b.end_date).strftime("%m/%d/%Y") %></p>
@@ -19,8 +20,6 @@
             <% else %>
             <div class="pending"><%= b.status %></div>
             <% end %>
-            <%= b.user_id %>
-            <%= b.appartment.user_id %>
 
           </div>
           <div class="booking-card-content">
@@ -31,6 +30,7 @@
             </div>
           </div>
         </div>
+        <% end %>
         <% end %>
       </div>
     </div>
