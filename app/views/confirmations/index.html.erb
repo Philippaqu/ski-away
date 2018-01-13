@@ -13,7 +13,7 @@
         <% if c.booking.appartment.user_id == current_user.id %>
 
 
-      <!-- Before Confirmation -->
+        <!-- Before Confirmation -->
 
         <% if c.booking.status == 'pending' %>
         <div class="large-review-card">
@@ -36,10 +36,10 @@
             </div>
             <div class="flex-start">
               <div class="btn btn-primary">
-                Accept
+                Accept <% c.booking.update(status: 'accepted') %>
               </div>
               <div class="btn btn-primary">
-                Decline
+                Decline <% c.booking.update(status:'declined') %>
               </div>
             </div>
           </div>
@@ -69,11 +69,11 @@
             </div>
           </div>
         </div>
+        <% end %>
+        <% end %>
       </div>
       <% end %>
-      <% end %>
     </div>
-    <% end %>
   </div>
 </section>
 </div>
