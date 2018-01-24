@@ -4,6 +4,10 @@ class ConfirmationsController < ApplicationController
     @confirmations = Confirmation.all
   end
 
+  def show
+    @confirmation = Confirmation.find(params[:id])
+  end
+
   def create
     @booking = Booking.find(params[:booking_id])
     @confirmation = Confirmation.create(confirmation_params)

@@ -35,11 +35,12 @@
               <p><strong>Total Price:</strong> <%= c.booking.total_price %>€</p>
             </div>
             <div class="flex-start">
+
               <div class="btn btn-primary">
-                Accept <% c.booking.update(status: 'accepted') %>
+                Accept
               </div>
               <div class="btn btn-primary">
-                Decline <% c.booking.update(status:'declined') %>
+                Decline
               </div>
             </div>
           </div>
@@ -60,6 +61,7 @@
             <div class="pending"><%= c.booking.status %></div>
             <% end %>
           </div>
+
           <div class="booking-card-content" style="opacity: 0.5">
             <div class="column-flex-start">
               <%= cl_image_tag c.booking.appartment.photo.path, height: 80, width: 80, crop: :fill %>
@@ -71,8 +73,8 @@
         </div>
         <% end %>
         <% end %>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </section>
