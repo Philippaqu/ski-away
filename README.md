@@ -29,7 +29,7 @@ ___________________________
  rails db:seed
  ```
 
- ####Run application
+ #### Run application
 ```
 rails s
 http://localhost:3000/
