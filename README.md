@@ -2,7 +2,7 @@
 
 **Skiaway**
 
-===========================
+___________________________
 
 **Synopsis**
 
@@ -29,7 +29,7 @@ ___________________________
  rails db:seed
  ```
 
- ###Run application
+ ####Run application
 ```
 rails s
 http://localhost:3000/
@@ -38,31 +38,10 @@ http://localhost:3000/
 To sign in:
 
 email: luz@welchwaters.name
+
 password: 123456
 
 **Note:** There are more users in the database
 
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
