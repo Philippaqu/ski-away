@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Review.delete_all
+Appartment.delete_all
+User.delete_all
+
+
 testimonials = ["This place was the perfect launching pad for a fun girls weekend. Kathie has impeccable taste when it comes to decor and restaurant recommendations! The best Airbnb I’ve stayed in.",
   "Kathie’s apartment was better than advertised! Such a charming place and quiet neighborhood. Kathie was very responsive to questions and provided an extensive list of places to check out. I highly recommend Kathie as your next host!",
   "Staying at Kathie's was super lovely. The space was wonderful and had absolutely everything we needed. Kathie left a lot of great recommendations for food and activities and was extremely helpful.",
@@ -33,14 +38,22 @@ users = []
 end
 
 
+Appartment.create(
+  address: "Dorfstraße 8 6580 St. Anton",
+  description: "TEST",
+  user_id: users.first,
+  price: 82,
+  header: "TEST",
+  appartment_type: "Entire house",
+  )
 
 
 appartments = []
 4.times do
   appartment = Appartment.create(
-address: addresses.shuffle.pop,
+address: addresses.sample,
 description: descriptions.sample,
-user_id: users.sample,
+user_id: users.sample.id,
 price: rand(50..350),
 header: appartment_headers.sample,
 appartment_type: ["Entire house", "Entire appartment", "Room"].sample,
@@ -52,9 +65,9 @@ end
 
 4.times do
   review = Review.create(
-    testimonial: testimonials.shuffle.pop,
-    user_id: users.sample,
-    appartment_id: appartments.sample,
+    testimonial: testimonials.sample,
+    user_id: users.sample.id,
+    appartment_id: appartments.sample.id,
     rating: rand(1..5))
   review.save
 end
