@@ -1,7 +1,7 @@
   <% @appartments.each do |appartment| %>
   <div class="col-sm-4">
     <div class="card">
-     <div class="card-image" style="background-image: url('<%= cl_image_path(appartment.photo.path)%>')"></div>
+     <div class="card-image" style="background-image: url('<%= appartment.photo? ? cl_image_path(appartment.photo.path) : '/assets/winter_shack.jpeg' %>')"></div>
      <div class="card-content">
       <div class="appartment-type-header"><%= appartment.appartment_type %></div>
       <div class="description-header"><%= link_to appartment.header, appartment_path(appartment)%></div>

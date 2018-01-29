@@ -24,7 +24,8 @@
           </div>
           <div class="booking-card-content">
             <div class="column-flex-start">
-              <%= cl_image_tag b.appartment.photo.path, height: 80, width: 80, crop: :fill  %>
+              <% photo_url = b.appartment.photo? ? b.appartment.photo.path : '/assets/winter_shack.jpeg' %>
+              <%= cl_image_tag photo_url, height: 80, width: 80, crop: :fill  %>
               <p> <strong>Address:</strong> <%= b.appartment.address %></p>
               <p><strong>Total Price:</strong> <%= b.total_price %>€</p>
             </div>
