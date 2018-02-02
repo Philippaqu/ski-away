@@ -29,7 +29,7 @@
           </div>
           <div class="booking-card-content">
             <div class="column-flex-start">
-              <%= cl_image_tag c.booking.appartment.photo.path, height: 80, width: 80, crop: :fill %>
+              <%= c.booking.appartment.photo? ? cl_image_path(c.booking.appartment.photo.path, height: 80, width: 80, crop: :fill) : image_tag('winter_shack.jpeg', height: 80, width: 80, crop: :fill) %>
               <p><strong>From: </strong><%= (c.booking.start_date).strftime("%m/%d/%Y")  %> <strong> To: </strong> <%= (c.booking.end_date).strftime("%m/%d/%Y") %></p>
               <p><strong>Message: </strong><%= c.text %></p>
               <p><strong>Total Price:</strong> <%= c.booking.total_price %>€</p>

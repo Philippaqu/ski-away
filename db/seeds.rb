@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Confirmation.delete_all
+Booking.delete_all
 Review.delete_all
 Appartment.delete_all
 User.delete_all
@@ -25,7 +27,15 @@ appartment_headers = ["Studio appartment village center", "Gabriela's Gateaway",
 
 addresses = ["Dorfstraße 8 6580  St. Anton am Arlberg", "Gemeinde St. Anton am Arlberg Dorfstraße 46 6580 St. Anton am Arlberg", "Bundesstr. 59 6754 Klösterle am Arlberg Vorarlberg", "St. Christoph 1, 6580 Sankt Christoph am Arlberg"]
 
+
 users = []
+test_user = User.create(
+  first_name: "luz",
+  last_name: "welchwaters",
+  email: "luz@welchwaters.name",
+  password: "123456",
+  )
+users << test_user
 10.times do
   user = User.create(
     first_name: Faker::Name.first_name,
@@ -36,6 +46,7 @@ users = []
   user.save
   users << user
 end
+
 
 
 Appartment.create(
@@ -63,7 +74,7 @@ appartment_type: ["Entire house", "Entire appartment", "Room"].sample,
 end
 
 
-4.times do
+40.times do
   review = Review.create(
     testimonial: testimonials.sample,
     user_id: users.sample.id,
