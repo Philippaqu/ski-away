@@ -56,6 +56,9 @@ Appartment.create(
   price: 82,
   header: "TEST",
   appartment_type: "Entire house",
+  bed: rand(2..10),
+  wlan: [true, false].sample,
+  bathtube: [true, false].sample,
   )
 
 
@@ -68,7 +71,9 @@ user_id: users.sample.id,
 price: rand(50..350),
 header: appartment_headers.sample,
 appartment_type: ["Entire house", "Entire appartment", "Room"].sample,
-    )
+bed: rand(2..10),
+wlan: [true, false].sample,
+bathtube: [true, false].sample,)
   appartment.save
   appartments << appartment
 end

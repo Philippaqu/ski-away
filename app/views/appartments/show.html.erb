@@ -51,12 +51,23 @@
       <div class="description-icons">
         <p>Type : <%= @appartment.appartment_type %></p>
         <div class="bed-icon">
-          <% 6.times do %>
+          <% @appartment.bed.times do %>
           <i class="fa fa-bed" aria-hidden="true"></i>
           <% end %>
         </div>
-        <i class="fa fa-wifi" aria-hidden="true"> : Yes</i>
-        <i class="fa fa-bath" aria-hidden="true"> : Yes</i>
+        <i class="fa fa-wifi" aria-hidden="true"> :
+          <% if @appartment.wlan == true  %>
+          <%= 'Yes'%>
+            <% else %>
+            <%='No'%>
+            <% end %>
+          </i>
+        <i class="fa fa-bath" aria-hidden="true"> :
+          <% if @appartment.bathtube == true  %>
+          <%= 'Yes'%>
+            <% else %>
+            <%= 'No'%>
+            <% end %></i>
       </div>
     </section>
 
