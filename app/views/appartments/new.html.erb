@@ -16,6 +16,11 @@
         <%= f.input :header, placeholder: "e.g. Cosy appartment in Swiss Alps" %>
 
         <%= f.input :appartment_type, collection: ["Entire house", "Entire appartment", "Room"] %>
+
+        <%= f.input :wlan, :as => :boolean, :label => false, :inline_label => true, label: "WLAN" %>
+        <%= f.input :bathtube, :as => :boolean, :label => false, :inline_label => true, label: "Bathtube" %>
+
+        <%= f.input :bed, collection: (1..15) %>
         <%= f.input :description, as: :text, placeholder: "min. 200 characters", input_html: {cols: 5, rows: 7} %>
         <%= f.input :price, placeholder: " in EUR and per night" %>
         <%= f.submit "Create new appartment", class: "btn btn-primary btn-lg" %>
